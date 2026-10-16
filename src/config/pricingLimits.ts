@@ -2,7 +2,8 @@ export type PricingLimitName =
   | "airport_surge_cap"
   | "surge_multiplier_min"
   | "surge_multiplier_max"
-  | "booking_fee";
+  | "booking_fee"
+  | "min_fare";
 
 export interface PricingLimitContext {
   zoneId?: string;
@@ -16,6 +17,7 @@ const SNAPSHOT: Record<PricingLimitName, number> = {
   surge_multiplier_min: 1.0,
   surge_multiplier_max: 4.0,
   booking_fee: 2.5,
+  min_fare: 5.0,
 };
 
 const overrides: Partial<Record<PricingLimitName, number>> = JSON.parse(
